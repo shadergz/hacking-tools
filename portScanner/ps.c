@@ -3,8 +3,6 @@
 #include <string.h>
 #include <getopt.h>
 
-#include <netinet/in.h>
-
 #include <sys/socket.h>
 #include <sys/socket.h>
 #include <netinet/in.h>

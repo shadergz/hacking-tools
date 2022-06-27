@@ -1,6 +1,6 @@
 # hackingTools
 
-A simple collection of tools implemented in 2 days used for information gathering reverse ;engineering; attack
+A simple collection of tools implemented in 2 days used for information gathering; reverse engineering; attack
 
 [I created this project after the xpsecsecurity post](https://www.instagram.com/xpsecsecurity)
 
