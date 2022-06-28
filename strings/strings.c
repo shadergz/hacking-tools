@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     if (fd == -1)
         return printf("Can't open the file %s because of %s\n", filename, strerror(errno));
 
-    unsigned char filebuffer[1024 * 8]; /* 8 Kibibyte */
+    unsigned char filebuffer[1024 * 8]; /* 8 Kibibytes */
     for (; ;) {
         unsigned char v;
         unsigned char *fb_array = filebuffer;
@@ -35,4 +35,6 @@ int main(int argc, char *argv[])
     }
     close(fd);
     puts("");
+
+    return 0;
 }

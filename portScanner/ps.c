@@ -30,7 +30,6 @@ static void validate(const int *portlist)
     for (int i = 0; i < 2; i++)
         if (portlist[i] < 0 || portlist[i] > 65535)
             exit(printf("Invalid port range (%d)\n", portlist[i]));
-    
 }
 
 int main(int argc, char **argv, char **env)
