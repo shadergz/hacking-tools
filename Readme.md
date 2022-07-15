@@ -15,3 +15,4 @@ Two tools are missing:
 - DoS: A Denial of Service attack based on Ping of Death
 - shellCode: A shell code in C
 - windows-keylogger: A simple keylogger for Windows based OS
+- obfuscator: A simple string obfuscator
