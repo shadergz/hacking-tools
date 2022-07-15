@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 {
     char c = 0;
 
-    while ((c = getopt(argc, argv, "hvedk:")) != -1)
+    while ((c = getopt(argc, argv, "hv")) != -1)
     switch (c)
     {
     case 'h': return printf("usage of %s: (%s): -d | -e TEXT\n", PROGRAM_NAME, PROGRAM_VERSION);
