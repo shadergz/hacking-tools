@@ -5,12 +5,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-#include <stdlib.h>
-
 #include <ctype.h>
 
 int main(int argc, char *argv[])
 {
+    (void)argc;
+
     if (!argv[1])
         return puts("A file is need");
     

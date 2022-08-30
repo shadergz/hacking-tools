@@ -4,7 +4,6 @@
 #include <getopt.h>
 
 #include <sys/socket.h>
-#include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
@@ -34,6 +33,8 @@ static void validate(const int *portlist)
 
 int main(int argc, char **argv, char **env)
 {
+    (void)env;
+
     int c;
     int portrange[2] = {0};
 
@@ -75,14 +76,14 @@ int main(int argc, char **argv, char **env)
     
     puts("Destination socket created and opened");
 
-    /* Settuping static informations */
+    /* Setting static information */
     dest_sock.sin_family = AF_INET;
     memset(&dest_sock.sin_zero, 0, sizeof(dest_sock.sin_zero));
 
     if (inet_aton(destination, &dest_sock.sin_addr) == 0)
         return puts("Destination not setted (something is wrong!)");
     else
-        puts("Destination configure successed");
+        puts("Destination configure succeed");
 
     for (int port = portrange[0]; port <= portrange[1]; port++)
     {

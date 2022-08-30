@@ -4,7 +4,6 @@
 #include <getopt.h>
 
 #include <stdlib.h>
-#include <ctype.h>
 
 #include <sys/select.h>
 
@@ -30,7 +29,7 @@ size_t strnobf(char *buffer, size_t bfsize, const char *strhand, size_t len)
 
 int main(int argc, char **argv)
 {
-    char c = 0;
+    int c;
 
     while ((c = getopt(argc, argv, "hv")) != -1)
     switch (c)
