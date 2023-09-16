@@ -52,14 +52,12 @@ ICMPChecksum(uint16_t *restrict icmph, int len)
 	uint32_t sum = 0;
 	uint16_t odd_byte;
 	
-	while (len > 1)
-    {
+	while (len > 1) {
 		sum += *icmph++;
 		len -= 2;
 	}
 	
-	if (len == 1)
-    {
+	if (len == 1) {
 		*(uint8_t*)(&odd_byte) = * (uint8_t*)icmph;
 		sum += odd_byte;
 	}
@@ -76,14 +74,15 @@ int main(int argc, char **argv)
     (void)argc;
 
     if (!argv[1])
-        return puts("A target is need");
+        return puts("A target is needed");
     
     static struct sigaction ctrl_c_int = {
         .sa_handler = interrupt,
     };
+
     sigemptyset( &ctrl_c_int.sa_mask );
     ctrl_c_int.sa_flags = SA_RESETHAND;
-    /* Setting the signal SIGINT a non-default action */
+    /* Setting the signal SIGINT to a non-default action */
     sigaction(SIGINT, &ctrl_c_int, NULL);
     
     char *target = argv[1];

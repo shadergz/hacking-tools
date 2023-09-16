@@ -35,7 +35,7 @@ int main()
 
     /* Try for established a connection */
     if (connect(sfd, (struct sockaddr *)&saddr, sizeof(saddr)) == -1) {
-        printf("Can't established a connection: %s\n", strerror(errno));
+        printf("Can't establish a connection: %s\n", strerror(errno));
         close(sfd);
         return errno;
     } else

@@ -15,7 +15,7 @@ static const char PROGRAM_VERSION[] = "0001";
 static int getports(const char *strports, int *portlist)
 {
     if (strstr(strports, ":")) {
-        /* A Port range has been specified */
+        /* A port range has been specified */
         *portlist++ = (int)strtoul(strports, NULL, 10);
         *portlist = (int)strtoul(strstr(strports, ":") + 1, NULL, 10);
         return portlist[1];
@@ -98,3 +98,4 @@ int main(int argc, char **argv, char **env)
 
     return 0;
 }
+

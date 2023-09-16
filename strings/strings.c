@@ -12,13 +12,13 @@ int main(int argc, char *argv[])
     (void)argc;
 
     if (!argv[1])
-        return puts("A file is need");
+        return puts("A filename is need");
     
     char *filename = argv[1];
 
     int fd = open(filename, O_RDONLY);
     if (fd == -1)
-        return printf("Can't open the file %s because of %s\n", filename, strerror(errno));
+        return printf("Can't open the file %s, cause of %s\n", filename, strerror(errno));
 
     unsigned char filebuffer[1024 * 8]; /* 8 Kibibytes */
     for (; ;) {
